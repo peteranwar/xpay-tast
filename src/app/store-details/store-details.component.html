@@ -1,0 +1,36 @@
+<section>
+  <div *ngIf="item; else loading">
+    <div class="cover">
+      <img
+      *ngIf="item.cover"
+      [src]="item.cover"
+      [alt]="item.title"
+     />
+     <img [src]="item.logo" [alt]="item.title" />
+   </div>
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.description }}</p>
+
+    <div *ngIf="start_opening" class="opening">
+      <p>Start opening: {{ start_opening }}</p>
+      <p>To: {{ end_opening }}</p>
+    </div>
+
+    <div>
+      <ul>
+        <li *ngFor="let product of productsDom ">
+           <div class="img-container">
+            <img src={{product.image}}  alt={{product.title}}>
+           </div>
+            <h4>{{product.title}}</h4>
+            <p>Price: {{product.price | currency:'EUR'}}</p>
+        </li>
+      </ul>
+           <button (click)="showAll()">{{!showAllProducts ? "Show more" : "Show less"}}</button>
+    </div>
+  </div>
+
+  <ng-template #loading>
+     <app-loader></app-loader>
+  </ng-template>
+</section>

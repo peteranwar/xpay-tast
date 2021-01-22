@@ -1,0 +1,36 @@
+nav{
+    background: #000000d6;
+    color: white;
+    padding: 25px;
+    h1{
+        font-size: 25px;
+        padding-bottom: 5px;
+        width: 120px;
+        display: block;
+        cursor: pointer;
+        position: relative;
+        transition: all .8s ease-in-out;
+        
+        &:after{
+            content: '';
+            position: absolute;
+            width: 40px;
+            background-color: #ea0fde;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+           transition: all .8s ease-in-out;
+        }
+
+        &:hover{
+            color:  #ea0fde;
+        }
+        &:hover:after{
+            width: 100%;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+}

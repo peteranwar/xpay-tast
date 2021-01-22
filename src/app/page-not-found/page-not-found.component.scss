@@ -1,0 +1,31 @@
+
+
+
+section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+button{
+    padding: 10px 20px;
+    border: 1px solid #dd0aea;
+    color: #dd0aea;
+    margin: 2rem auto;
+    display: flex;
+    cursor: pointer;
+    font-size: 22px;
+    background: white;
+    border-radius: 7px;
+    transition: all .8s ease-in-out;
+
+    &:hover{
+       color: white;
+       background: #dd0aea;
+       border-radius: 30px;
+    }
+    &:focus{
+      outline: none;
+    }
+}

@@ -1,0 +1,22 @@
+<section *ngIf="!errMessage">
+
+ <ul *ngIf="store; else loading" >
+    <li *ngFor="let str of store" routerLink="store-details/{{str.id}}">
+      <h2>{{str.title}}</h2>
+      <h5>{{str.address}}</h5>
+        <img [src]="str.logo" [alt]="str.title">
+        <div class="desc-body">
+            <p>{{str.description | slice:0:60}}...</p>
+            <p class="truncation"></p>
+        </div>
+    </li>
+  </ul> 
+
+  <ng-template #loading>
+    <app-loader></app-loader>
+  </ng-template>
+</section>
+
+<section *ngIf="errMessage" class="error">
+  <h1>{{errMessage}}</h1>
+</section>
